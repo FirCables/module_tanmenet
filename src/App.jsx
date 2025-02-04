@@ -1,5 +1,6 @@
 import OraCard from "./components/OraCard";
 import OraSzam from "./components/OraSzam";
+import Temakorok from "./components/temakorok";
 const orak = [
   {
     oraSzam: 1,
@@ -33,6 +34,7 @@ const App = () => {
     <main>
       <h1>Bevezetés a programozásba</h1>
       <OraSzam />
+      <Temakorok />
       <section className="ora-grid">
       {orak.map((ora) => (
         <OraCard key={ora.oraSzam} oraSzam={`${ora.oraSzam}.óra`} cim={ora.cim}>
