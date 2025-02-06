@@ -1,8 +1,20 @@
-const OraForm = () => {
+import { useState } from "react";
+
+const OraForm = ({onOrahozzaad}) => {
     const [cim, setCim] = useState("");
     const [leiras, setLeiras] = useState("");
+   function handleFormSubmit(e) {
+        e.preventDefault();
+        const newOra = {
+            cim,
+            leiras,
+        };
+        onOrahozzaad(newOra);
+        setCim("");
+        setLeiras("");
+    }
     return (
-        <form action="#">
+        <form onSubmit={handleFormSubmit}>
         <div className="col">
           <input type="text" placeholder="Cím" value={cim} onChange={(e) => setCim(e.target.value)} />
           <textarea placeholder="Leírás" rows="5" value ={leiras} onChange={(e) => setLeiras(e.target.value)} ></textarea>
